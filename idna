@@ -1,0 +1,55 @@
+#!/bin/bash
+
+## Idena Linux Node control script, by Вукић Срђан
+#
+## Licence:
+#   This file is forbidden as much as Openbox is.
+#   Go figure.
+#
+## Directory for standard output logging
+logpath="$HOME/.local/share/idena"
+#
+## Basename for the standard output log file
+logfile="$logpath/output.log"
+
+## In order to discard STOUD completely,
+## uncomment below line.
+#logfile=/dev/null
+
+## Configuration file location
+configfile="$HOME/.goidna.json"
+#
+## Unique process ID based on so called virtual *(exec -a) `netmine` parameter
+declare -r processid=$(ps aux | egrep -w "[n]etmine" | awk '{print $2}')
+
+case $1
+in 'start')
+
+  # If STDOUT log directory is not in existence, it will be created asap.
+  # It is MEANT to be somewhere in $HOME
+  [[ -d $logpath ]] || mkdir $logpath;
+
+  # Start only if there is no known process ID already.
+  # Force to background so that SSH option/control becomes auto-friendly.
+  if [[ $processid = '' ]]
+  then
+    exec -a netmine idena --config="$configfile" &> $logfile &
+  fi
+
+;; 'stop')
+
+  # Stop - only if there is anything related to stop ..
+  if [[ $processid != '' ]]
+  then
+    kill -9 $processid
+  fi
+;; 'status')
+  state=
+  [[ $processid = '' ]] && state='NOT '
+  echo -e "Idena-node is ${state}running."
+
+;; *)
+  # This is error
+  echo -e $'\n\n\t'"'$1' .. ?!? You mean .. 'start' or 'stop', right .. ?"$'\n'
+;;
+esac
