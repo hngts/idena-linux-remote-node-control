@@ -88,27 +88,27 @@ Make idena-linux-node executable directly via previously created symlink:
 
 #### STEP 3 (copy/make control script):
 
-1. Copy 'idna' file to $HOME/bin/idna.
+1. Copy `idna` file to `$HOME/bin/idna`.
     
     *note that `/readable/path/to/idena-ctrl/` may be any accessible dir.*
 
         $ cp /readable/path/to/idena-ctrl/idna $HOME/bin/idna
 
-    .. or any other name for that matter if idna is .. too short .. ?
+    .. or any other name for that matter if `idna` is .. too short .. ?
 
         $ cp /readable/path/to/idena-ctrl/idna $HOME/bin/idna-miner
 
     One can also do it on harder way, by hand and - mouse.
 
-    If that's the case, then create blank idna file in `$HOME/bin` directory.
+    If that's the case, then create blank `idna` file in `$HOME/bin` directory.
 
         $ cd $HOME/bin && touch idna && nano idna;
 
-    Open \*(on client PC) `idena-ctrl/idna` file and copy contents \*( ctrl + a --> ctrl + c \*(or right-mouse-click and 'copy') ), 
+    Open \*(on client PC) `idena-ctrl/idna` file and copy contents \*( `ctrl + a` --> `ctrl + c` \*(or right-mouse-click and 'copy') ), 
     <br> then (right click) paste into ssh window where nano buffer is opened, save file and close nano.
 
-      - Each terminal is treating `ctrl + shift + V` (no, it is not `ctrl + v` ) as - paste - command.
-      - Press `ctrl + o` then `enter` *(to save and to confirm file name) then `ctrl + x` to exit nano.
+      - Terminal emulators are treating `ctrl + shift + V` (no, it is not `ctrl + v` ) as - paste - command.
+      - Press `ctrl + o` then `enter` \*(to save and to confirm file name) then `ctrl + x` to exit nano.
 
 #### STEP 4 (make script executable):
 
@@ -124,7 +124,7 @@ In order to adjust index key values properly.
 
 1. Provide `Datadir` location.
 2. Provide true `GenesisConf.GodAddress` (Idena-Client ID).
-3. Provide true `RPC.HTTPhost` (0.0.0.0 === LISTEN ON ALL INTERFACES).
+3. Provide true `RPC.HTTPhost` ( `"0.0.0.0" === LISTEN_ON_ALL_INTERFACES` )
 
 Optionally adjust `RPC.HTTPPort`, `IpFsConf.*` and `P2P.*` indexes.
 
@@ -148,14 +148,14 @@ Optionally adjust `RPC.HTTPPort`, `IpFsConf.*` and `P2P.*` indexes.
 
 ## FINAL NOTE
 
-  You may want to check with `htop` command.
+ You may want to check with `htop` command.
 
-  Once when htop is opened, press/hit F4 and type `netmine`.
-  You should see idena-linux-node `nickname` (netmine) process with it's child subprocesses onscreen.
+ Once when htop is opened, press/hit F4 and type `netmine`.
+ You should see idena-linux-node `nickname` (netmine) process with it's child subprocesses onscreen.
 
-  `netmine` is actually fakename for non-existent `service` control, thanks to bash `exec` function.
+ `netmine` is actually fakename for non-existent `service` control, thanks to bash `exec` function.
 
-  And if `earthling_doe` changes config file name from `$HOME/.goidna.json` to '$HOME/yabadabadooya.json',
-  where '$HOME/yabadabadooya.json' will exist with real, working and valid contents - the better. :)
+ And if `earthling_doe` changes config file name from `$HOME/.goidna.json` to '$HOME/yabadabadooya.json',
+ where '$HOME/yabadabadooya.json' will exist with real, working and valid contents - the better. :)
 
-  *hint: Type `exec --help` if bored and look for -a option. Very nifty.*
+ *(**hint**: Type `exec --help` if bored and look for -a option. Very nifty.)*
