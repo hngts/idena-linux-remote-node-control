@@ -112,7 +112,7 @@ Make idena-linux-node executable directly via previously created symlink:
 
 #### STEP 4 (make script executable):
 
-This or that - `earthling_doe` must become executable.
+This or that - `$HOME/bin/idna` must become executable.
 
     $ chmod +x $HOME/bin/idna
 
