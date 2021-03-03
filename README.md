@@ -4,7 +4,7 @@
 
 - **`$Version`** or **`0.24.3`** as Version 
 
-- **`earthling_doe`** as User 
+- **`earthling_doe`** as User \*(You, reading this) 
 
 - **`192.168.0.120`** as Remote machine's example IP
  
@@ -44,9 +44,9 @@ And Two word combo's are:
 
 ### Assumptions/cosiderations
 
-- Assuming that client machine with `192.168.0.150` will connect to remote (local network) node.
+- Assuming that client machine `192.168.0.150` will be connected to remote/local network node.
 
-    (node address with port example: `http://192.168.0.120:9009`)
+    ( **`NFS`** node address with port example: `http://192.168.0.120:9009` )
 
 - Assuming that `earthling_doe` from *client machine* (`192.168.0.150`) is whitelisted user in ssh config file on *node machine* (`192.168.0.120`) and that `earthling_doe` is logged *`as@on`*: `earthling_doe@node_machine`.
 
@@ -71,15 +71,14 @@ And Two word combo's are:
 
 #### STEP 1 (create symbolic link to idena-linux-node executable):
 
-1. One need to create symlink to the exectuable file and to allow its - `execution`. 
-
+One need to create symlink to the exectuable file and to allow its - `execution`. 
   (omit the following command if not already executed)
 
     $ sudo  chown -R earthling_doe:earthling_doe /opt/Idena/
     
-2. Create symbolic link
+  Create symbolic link: 
    
-  `$ ln -s /opt/Idena/idena-node-linux-0.24.3 $HOME/bin/idena`
+    $ ln -s /opt/Idena/idena-node-linux-0.24.3 $HOME/bin/idena
 
 #### STEP 2 (make idena-linux-node - truly executable):
 
@@ -123,7 +122,7 @@ Copy `.goidna.json` file into `$HOME/.goidna.json` from `idna-ctrl`
 
 In order to adjust index key values properly.
 
-1. Provide `DataDir` location.
+1. Provide `Datadir` location.
 2. Provide true `GenesisConf.GodAddress` (Idena-Client ID).
 3. Provide true `RPC.HTTPhost` (0.0.0.0 === LISTEN ON ALL INTERFACES).
 
@@ -135,19 +134,19 @@ Optionally adjust `RPC.HTTPPort`, `IpFsConf.*` and `P2P.*` indexes.
 
     $ idna status
  
-  Is there a word " NOT " in output response .. ?
+  Is there a word "*NOT*" in output response .. ?
  
-  if there is:
+  .. if there is:
  
     $ idna start
  
-  Otherwise it is probably running (refer to Note below).
+  Otherwise, it is probably running (refer to final note below).
 
 **`STOP:`**
 
     $ idna stop
 
-## Note
+## FINAL NOTE
 
   You may want to check with `htop` command.
 
