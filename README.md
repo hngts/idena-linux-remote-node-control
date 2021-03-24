@@ -2,7 +2,7 @@
 
 ## Why this script exists in first place .. ?
 
-In other words, so that one can - detach - and mark idena-node instance as unique process during command line startup execution. This kind of action enables user to focus on other tasks within one single instance via ssh, for example. With two words.
+So that one can - detach - and mark idena-node instance as unique process during command line startup execution. This kind of action enables user to focus on other tasks within one single instance via ssh, for example. With two words.
 
 ##  Tested over ssh in LOCAL \*(LAN/cable) network
 
