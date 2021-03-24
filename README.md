@@ -1,6 +1,6 @@
 # "Idena Linux-Node" control script
 
-## Help Associations for the sake of further examples
+##  Tested over ssh in LOCAL \*(LAN/cable) network
 
 - **`$Version`** or **`0.24.3`** as Version 
 
@@ -12,8 +12,6 @@
 
 - '**`$`**' (without singlequotes) before `command` indicates user \*(and NOT) root shell.
 
-##  Tested over ssh in LOCAL \*(LAN/cable) network
-
 Client machine
 
      Debian 10 Buster (Debian 5.9.15-1~bpo10+1 (2020-12-31) x86_64 GNU/Linux)
@@ -23,9 +21,9 @@ Node Machine
      Debian 10 Buster (Debian 5.10.13-1~bpo10+1 (2021-02-11) x86_64 GNU/Linux)
 
 
-## Why this script exists in first place .. ?
+### Why this script exists in first place .. ?
 
-To be as short as possible "***Dirty mimic of simple \*nix service for lazy people.***"
+To be as short as possible: "***Dirty mimic of simple \*nix service for lazy people.***"
 
 In other words, so that one can - detach - and mark idena-node instance as unique process during command line startup execution. This kind of action enables user to focus on other tasks within one single instance via ssh, for example. With two words.
 
@@ -52,11 +50,11 @@ And Two word combo's are:
 
 - Assuming that `earthling_doe` has already downloaded *`idena-node-linux-$Version`* and has placed it somewhere outside it's `$HOME` directory, eg: `/opt/Idena/idena-node-linux-$Version`
 
-- Assuming that `earthling_doe` is using external configuration file (look inside `idna` file which one that is LINE 20, follow # the comments)
+- Assuming that `earthling_doe` is using external configuration file (look inside `idna` file which one that is `LINE 20`, follow `# the comments`)
 
-- Assuimng that `earthling_doe` MUST have *(best, safest practice) $HOME/bin in it's path ..
+- Assuimng that `earthling_doe` MUST have \*(best, safest practice) `$HOME/bin` in it's path ..
 
-    .. and if not, place the following at the bottom of $HOME/.profile file:
+    .. and if not, place the following at the bottom of `$HOME/.profile` file:
     
       # Set PATH so it includes user's private bin if it exists
       if [ -d "$HOME/bin" ]; then
@@ -66,6 +64,10 @@ And Two word combo's are:
 - Assuming that `idna-ctrl` is a directory where copied files from this very repo reside
 
 - Assuming that `$HOME` equals `/home/earthling_doe`
+
+
+Keep in mind that NFS server on `node_machine` IS NOT required, unless You want to share live console stdout to other LAN machines. 
+
 
 ### Setup procedure
 
@@ -122,11 +124,10 @@ Copy `.goidna.json` file into `$HOME/.goidna.json` from `idna-ctrl`
 
 In order to adjust index key values properly.
 
-1. Provide `Datadir` location.
-2. Provide true `GenesisConf.GodAddress` (Idena-Client ID).
-3. Provide true `RPC.HTTPhost` ( `"0.0.0.0" === LISTEN_ON_ALL_INTERFACES` )
+1. Provide correct \*(and the same) `Datadir` and `IpfsConf.DataDir` values.
+2. Provide true `RPC.HTTPhost` ( `"0.0.0.0" === 'listen on all interfaces'` ) `node_machine` address. 
 
-Optionally adjust `RPC.HTTPPort`, `IpFsConf.*` and `P2P.*` indexes.
+Optionally adjust `RPC.HTTPhost`, `RPC.HTTPport.*` and (.. or should You ?) `IpfsConf.IpfsPort.*` indexes.
 
 ### Script control
 
@@ -155,7 +156,7 @@ Optionally adjust `RPC.HTTPPort`, `IpFsConf.*` and `P2P.*` indexes.
 
  `netmine` is actually fakename for non-existent `service` control, thanks to bash `exec` function.
 
- And if `earthling_doe` changes config file name from `$HOME/.goidna.json` to '$HOME/yabadabadooya.json',
- where '$HOME/yabadabadooya.json' will exist with real, working and valid contents - the better. :)
+ And if `earthling_doe` changes config file name (`idna` file) from `$HOME/.goidna.json` to '`$HOME/yabadabadooya.json`',
+ where '`$HOME/yabadabadooya.json`' will exist with real, working and valid contents - the better. :)
 
  *(**hint**: Type `exec --help` if bored and look for -a option. Very nifty.)*
