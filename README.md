@@ -1,16 +1,10 @@
 # "Idena Linux-Node" control script
 
+## Why this script exists in first place .. ?
+
+In other words, so that one can - detach - and mark idena-node instance as unique process during command line startup execution. This kind of action enables user to focus on other tasks within one single instance via ssh, for example. With two words.
+
 ##  Tested over ssh in LOCAL \*(LAN/cable) network
-
-- **`$Version`** or **`0.24.3`** as Version 
-
-- **`earthling_doe`** as User \*(You, reading this) 
-
-- **`192.168.0.120`** as Remote machine's example IP
- 
-- **`192.168.0.150`** as Client machine's example IP
-
-- '**`$`**' (without singlequotes) before `command` indicates user \*(and NOT) root shell.
 
 Client machine
 
@@ -21,11 +15,17 @@ Node Machine
      Debian 10 Buster (Debian 5.10.13-1~bpo10+1 (2021-02-11) x86_64 GNU/Linux)
 
 
-### Why this script exists in first place .. ?
+## Consider the following:
 
-To be as short as possible: "***Dirty mimic of simple \*nix service for lazy people.***"
+- **`$Version`** or **`0.24.3`** as Version 
 
-In other words, so that one can - detach - and mark idena-node instance as unique process during command line startup execution. This kind of action enables user to focus on other tasks within one single instance via ssh, for example. With two words.
+- **`earthling_doe`** as User \*(You, reading this) 
+
+- **`192.168.0.120`** as Remote machine's example IP
+ 
+- **`192.168.0.150`** as Client machine's example IP
+
+- '**`$`**' (without singlequotes) before `command` indicates user \*(and NOT) root shell.
 
 And Two word combo's are:
 
