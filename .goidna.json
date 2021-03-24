@@ -1,19 +1,17 @@
 {
-  "Datadir": "PROVIDE_VALID_DIRECTORY",
-  "GenesisConf": {
-    "GodAddress": "42_CHARACTERS_HASH"
-  },
+  "DataDir": "PATH_TO_IDENA_DATADIR",
   "P2P": {
-    "MaxInboundPeers": 12,
-    "MaxOutboundPeers": 6
+    "ListenAddr": ":40404",
+    "NoDiscovery": false
   },
   "RPC": {
     "HTTPHost": "0.0.0.0",
     "HTTPPort": 9009
   },
   "IpfsConf": {
-    "BlockPinThreshold": 0.3,
-    "FlipPinThreshold": 0.5
+    "DataDir": "PATH_TO_IDENA_DATADIR",
+    "IpfsPort": 40405,
+    "Profile": "server"
   },
   "Sync": {
     "FastSync": true
