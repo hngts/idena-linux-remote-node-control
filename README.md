@@ -2,7 +2,20 @@
 
 ## Why this script exists in first place .. ?
 
-So that one can - detach - and mark idena-node instance as unique process during command line startup execution. This kind of action enables user to focus on other tasks within one single instance via ssh, for example. With two words.
+So that one can - detach - and mark idena-node instance as unique process during command line startup execution. This kind of action enables user to focus on other tasks within one single instance via ssh, for example. With *two words*. 
+
+And Two word combo's are:
+
+    $ idna status       # tells the node status
+    $ idna start        # starts the node - if not already running. *(the status will tell)
+    $ idna stop         # kills (stops) the node and all it's child processes.
+
+    # Anything other than this will mimic friendly error-alike message.
+
+    
+**Note:**
+  It doesn't need to be  - `idna` -  It can be anything readable. :)
+
 
 ##  Tested over ssh in LOCAL \*(LAN/cable) network
 
@@ -26,18 +39,6 @@ Node Machine
 - **`192.168.0.150`** as Client machine's example IP
 
 - '**`$`**' (without singlequotes) before `command` indicates user \*(and NOT) root shell.
-
-And Two word combo's are:
-
-    $ idna status       # tells the node status
-    $ idna start        # starts the node - if not already running. *(the status will tell)
-    $ idna stop         # kills (stops) the node and all it's child processes.
-
-    # Anything other than this will mimic friendly error-alike message.
-
-    
-**Note:**
-  It doesn't need to be  - `idna` -  It can be anything readable. :)
 
 
 ### Assumptions/cosiderations
